@@ -1,0 +1,92 @@
+/* Generelt */
+body {
+    margin: 0;
+    background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: Helvetica, sans-serif;
+}
+
+p{
+    font-size: 12px;
+}
+
+
+/* clothes */
+
+.clothes-article {
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-areas: "billede billede" "navn navn" "liner liner" "pris pris" "kob quickview";
+    line-height: 0.0;
+    margin-bottom: 3vw;
+
+}
+
+.data-billede1{
+    grid-area: billede;
+    width: 100%;
+}
+
+.billede-hover {
+    width: 200px;
+    height: 200px;
+    border: solid 1px red;
+    cursor: pointer;
+
+}
+.billede-hover img {
+    opacity: 0;
+}
+
+.billede-hover img:hover {
+    opacity: 1;
+}
+
+.data-navn {
+    grid-area: navn;
+    margin-left: 3vw;
+}
+
+.data-liner {
+    grid-area: liner;
+    margin-left: 3vw;
+}
+
+.data-pris {
+    grid-area: pris;
+    margin-left: 3vw;
+    margin-bottom: 8vw;
+    color: skyblue;
+}
+
+.kob {
+    grid-area: kob;
+    cursor: pointer;
+    border: 1px solid black;
+    font-size: 12px;
+
+}
+.kob:hover{
+    background-color: skyblue;
+    border: 1px solid white;
+}
+
+.quickview {
+    grid-area: quickview;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-left: 1vw;
+    font-size: 12px;
+}
+.quickview:hover{
+    background-color: skyblue;
+    border: 1px solid white;
+}
