@@ -40,8 +40,8 @@
     <script>
 
         let urlParams = new URLSearchParams(window.location.search);
-        let navn = urlParams.get("clothes.title.rendered");
-        console.log(navn);
+        let id = urlParams.get("id");
+        console.log(id);
 
 
         // DOM loaded
@@ -63,7 +63,7 @@
 
             clothes.forEach(clothing => {
 
-                if(clothing.navn==navn) {
+                if(clothing.id==id) {
                 dest.querySelector(".data-navn").textContent = clothing.title.rendered;
                 dest.querySelector(".data-pris").textContent = clothing.acf.pris + ",-";
                 dest.querySelector(".data-beskrivelse").textContent = clothing.acf.beskrivelseTekst;
