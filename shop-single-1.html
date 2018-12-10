@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop tøj fra Robe Copenhagen</title>
+    <!-- Meta beskrivelse  -->
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="style-2.css" type="text/css">
+
+</head>
+
+<body>
+
+
+
+    <main class="container-single">
+
+        <section class="data-container">
+            <article class="clothes">
+                <h1 class="data-navn"></h1>
+                <p class="data-liner"></p>
+                <p class="data-pris"></p>
+                <p class="data-beskrivelse"></p>
+                <p class="data-materialer"></p>
+                <img class="data-billede1" src="" alt="">
+                <img class="single-billede2" src="" alt="">
+                <img class="data-billede3" src="" alt="">
+
+                <button class="kob"><p>Køb</p></button>
+
+            </article>
+        </section>
+    </main>
+
+
+    <!--Script-->
+    <script>
+
+        let urlParams = new URLSearchParams(window.location.search);
+        let navn = urlParams.get("clothes.title.rendered");
+        console.log(navn);
+
+
+        // DOM loaded
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let clothesTemplate = document.querySelector("#clothes-template");
+        let clothesContainer = document.querySelector(".container");
+        // Hent json
+        async function getJSON() {
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe-cph/wp-json/wp/v2/clothing");
+            clothes = await jsonData.json();
+            console.log(clothes);
+            visClothing();
+        }
+
+        // Viser og kloner
+        function visClothing() {
+
+            let dest = document.querySelector(".data-container");
+
+            clothes.forEach(clothing => {
+
+                if(clothing.navn==navn) {
+                dest.querySelector(".data-navn").textContent = clothing.title.rendered;
+                dest.querySelector(".data-pris").textContent = clothing.acf.pris + ",-";
+                dest.querySelector(".data-beskrivelse").textContent = clothing.acf.beskrivelseTekst;
+                dest.querySelector(".data-materialer").textContent = clothing.acf.materialerTekst;
+
+                dest.querySelector(".data-billede1").src= clothing.acf.hovedbillede;
+                dest.querySelector(".single-billede2").src= clothing.acf.billede_2;
+                dest.querySelector(".data-billede3").src= clothing.acf.billede_3;
+
+                dest.appendChild(klon);
+                }
+            })
+            }
+
+    </script>
+
+
+</body>
+
+</html>

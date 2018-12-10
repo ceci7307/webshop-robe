@@ -59,11 +59,17 @@
                 klon.querySelector("img").src = clothing.acf.hovedbillede;
                 klon.querySelector(".data-billede2").src = clothing.acf.billede_2;
 
+                klon.querySelector(".data-billede2").addEventListener("click", () => {
+                    window.location.href = "shop-single-1.html?=navn" + clothing.title.rendered;
+                });
+
+
 
                 clothesContainer.appendChild(klon);
 
             });
         }
+
     </script>
 
 
