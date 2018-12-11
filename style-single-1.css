@@ -256,9 +256,10 @@ select {
         background-color: lightgoldenrodyellow;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 23px 1fr;
         line-height: 0.2;
     }
+/*
     .data-billede1 {
         grid-column: 1;
         grid-row: 1 / span 4;
@@ -273,6 +274,7 @@ select {
         grid-column: 2;
         grid-row: 3 / span 2;
     }
+*/
 
     .data-navn {
         grid-column: 3;
@@ -287,20 +289,24 @@ select {
     .o-1 {
         grid-column: 1 / span 2;
         grid-row: 5;
+        margin-top: 0;
     }
     .data-beskrivelse {
         grid-column: 1 / span 2;
         grid-row: 6;
+        margin-top: 0;
     }
 
     .o-2 {
         grid-column: 3 / span 2;
         grid-row: 5;
+        margin-top: 0;
     }
 
     .data-materialer {
         grid-column: 3 / span 2;
         grid-row: 6;
+        margin-top: 0;
     }
 
     .farver {
@@ -316,14 +322,13 @@ select {
     .kob {
         grid-column: 4;
         grid-row: 3;
+        margin: auto;
     }
 
-    .dot {
-        display: none;
-    }
-
-    .prev, .next{
-        display: none;
+    .slideshow-container {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 4;
+        width: auto;
     }
 
 }
