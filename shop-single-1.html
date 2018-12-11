@@ -8,29 +8,67 @@
     <!-- Meta beskrivelse  -->
     <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
     <!-- CSS  -->
-    <link rel="stylesheet" href="style-2.css" type="text/css">
+    <link rel="stylesheet" href="style-single-1.css" type="text/css">
 
 </head>
 
 <body>
-
-
 
     <main class="container-single">
 
         <section class="data-container">
             <article class="clothes">
                 <h1 class="data-navn"></h1>
-                <p class="data-liner"></p>
-                <p class="data-pris"></p>
+                <h2 class="data-pris"></h2>
+                <p class="o-1">Beskrivelse:</p>
                 <p class="data-beskrivelse"></p>
+                <p class="o-2">Materialer:</p>
                 <p class="data-materialer"></p>
+
+                <select class="farver">
+                <option value="#">Vælg farve</option>
+                <option value="sort">Sort</option>
+                <option value="hvid">Hvid</option>
+                <option value="blue">Blå</option>
+                <option value="grey">Grå</option>
+                <option value="green">Grøn</option>
+                </select>
+
+                <select class="siezes">
+                <option value="#">Vælg størrelse</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+                </select>
+
+                <div class="slideshow-container">
+
+                <div class="mySlides fade">
                 <img class="data-billede1" src="" alt="">
+                </div>
+
+                <div class="mySlides fade">
                 <img class="single-billede2" src="" alt="">
+                </div>
+
+                <div class="mySlides fade">
                 <img class="data-billede3" src="" alt="">
+                </div>
 
-                <button class="kob"><p>Køb</p></button>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
+
+                <br>
+                <div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+   </div>
+                <button class="kob"><p>Læg i kurv</p></button>
             </article>
         </section>
     </main>
@@ -38,7 +76,6 @@
 
     <!--Script-->
     <script>
-
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");
         console.log(id);
@@ -63,21 +100,47 @@
 
             clothes.forEach(clothing => {
 
-                if(clothing.id==id) {
-                dest.querySelector(".data-navn").textContent = clothing.title.rendered;
-                dest.querySelector(".data-pris").textContent = clothing.acf.pris + ",-";
-                dest.querySelector(".data-beskrivelse").textContent = clothing.acf.beskrivelseTekst;
-                dest.querySelector(".data-materialer").textContent = clothing.acf.materialerTekst;
+                if (clothing.id == id) {
+                    dest.querySelector(".data-navn").textContent = clothing.title.rendered;
+                    dest.querySelector(".data-pris").textContent = clothing.acf.pris + ",-";
+                    dest.querySelector(".data-beskrivelse").textContent = clothing.acf.beskrivelseTekst;
+                    dest.querySelector(".data-materialer").textContent = clothing.acf.materialerTekst;
 
-                dest.querySelector(".data-billede1").src= clothing.acf.hovedbillede;
-                dest.querySelector(".single-billede2").src= clothing.acf.billede_2;
-                dest.querySelector(".data-billede3").src= clothing.acf.billede_3;
+                    dest.querySelector(".data-billede1").src = clothing.acf.hovedbillede;
+                    dest.querySelector(".single-billede2").src = clothing.acf.billede_2;
+                    dest.querySelector(".data-billede3").src = clothing.acf.billede_3;
 
-                dest.appendChild(klon);
+                    dest.appendChild(klon);
                 }
             })
-            }
+        }
 
+        var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
     </script>
 
 

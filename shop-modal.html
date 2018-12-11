@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop tøj fra Robe Copenhagen</title>
+    <!-- Meta beskrivelse  -->
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="style-2.css" type="text/css">
+
+</head>
+
+<body>
+
+    <!-- MENU MODAL -->
+    <section id="modal">
+
+        <button class="luk">Luk</button>
+        <div id="modal-content">
+            <img class="modal-billede1" src="" alt="">
+            <img class="modal-billede2" src="" alt="">
+            <img class="modal-billede3" src="" alt="">
+
+            <h1 class="modal-navn"></h1>
+            <h2 class="modal-pris"></h2>
+
+            <select class="farver">
+                <option value="#">Vælg farve</option>
+                <option value="sort">Sort</option>
+                <option value="hvid">Hvid</option>
+                <option value="blue">Blå</option>
+                <option value="grey">Grå</option>
+                <option value="green">Grøn</option>
+                </select>
+
+            <select class="siezes">
+                <option value="#">Vælg størrelse</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+                </select>
+
+            <button class="kob"><p>Køb</p></button>
+        </div>
+    </section>
+
+
+
+    <!--TEMPLATE-->
+    <section class="container"></section>
+
+    <template id="clothes-template">
+      <article class="clothes-article">
+       <h1 class="data-navn"></h1>
+       <p class="data-liner"></p>
+       <p class="data-pris"></p>
+        <img class="data-billede1" src="" alt="">
+        <img class="data-billede2" src="" alt="">
+        <img class="data-billede3" src="" alt="">
+
+        <button class="kob"><p>Køb</p></button>
+        <button class="quickview"><p>Quickview</p></button>
+
+       </article>
+    </template>
+
+
+    <!--Script-->
+    <script>
+        // DOM loaded
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let clothesTemplate = document.querySelector("#clothes-template");
+        let clothesContainer = document.querySelector(".container");
+        // Hent json
+        async function getJSON() {
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe-cph/wp-json/wp/v2/clothing");
+            clothes = await jsonData.json();
+            console.log(clothes);
+            visClothing();
+        }
+
+        // Viser og kloner
+        function visClothing() {
+            clothes.forEach(clothing => {
+                let klon = clothesTemplate.cloneNode(true).content;
+
+                klon.querySelector(".data-navn").textContent = clothing.title.rendered;
+                klon.querySelector(".data-liner").textContent = clothing.acf.liner;
+                klon.querySelector(".data-pris").textContent = clothing.acf.pris + " kr.";
+                klon.querySelector("img").src = clothing.acf.hovedbillede;
+                klon.querySelector(".data-billede2").src = clothing.acf.billede_2;
+
+                klon.querySelector(".data-billede2").addEventListener("click", () => {
+                    window.location.href = "shop-single-1.html?id=" + clothing.id;
+                });
+
+                    klon.querySelector(".quickview").addEventListener("click", () => {
+                        visModal(clothing);
+                    });
+
+                clothesContainer.appendChild(klon);
+
+            });
+        }
+
+
+        // SCRIPT MODAL
+        function visModal(item) {
+            let modal = document.querySelector("#modal");
+            modal.classList.add("vis");
+
+            modal.querySelector(".modal-navn").textContent = item.title.rendered;
+            modal.querySelector(".modal-pris").textContent = item.acf.pris;
+
+            modal.querySelector(".modal-billede1").src = item.acf.hovedbillede;
+            modal.querySelector(".modal-billede2").src = item.acf.billede_2;
+            modal.querySelector(".modal-billede3").src = item.acf.billede_3;
+
+            modal.querySelector(".luk").addEventListener("click", skjulModal);
+        }
+
+        function skjulModal() {
+            modal.classList.remove("vis");
+        }
+
+    </script>
+
+
+</body>
+
+</html>

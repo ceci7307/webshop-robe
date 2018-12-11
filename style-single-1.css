@@ -1,0 +1,353 @@
+/* Generelt */
+
+body {
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: Helvetica, sans-serif;
+}
+
+h1,
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 12px;
+}
+
+
+/* clothes */
+
+.clothes {
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-areas: "billede billede" "navn pris" "farver siezes" "o-1 o-1" "beskrivelse beskrivelse" "o-2 o-2" "materialer materialer" "kob kob";
+    line-height: 0.2;
+
+}
+
+.data-billede1 {
+    width: 100%;
+}
+
+.single-billede2 {
+    width: 100%;
+}
+
+.data-billede3 {
+    width: 100%;
+}
+
+.data-navn {
+    grid-area: navn;
+    margin-left: 3vw;
+}
+
+.data-pris {
+    grid-area: pris;
+    margin-bottom: 8vw;
+    color: skyblue;
+}
+
+.kob {
+    grid-area: kob;
+    cursor: pointer;
+    border: 1px solid skyblue;
+    min-width: 25vw;
+    margin: auto;
+    margin-bottom: 2vw;
+}
+
+.kob:hover {
+    background-color: skyblue;
+    border: 1px solid whitesmoke;
+}
+
+.data-beskrivelse {
+    grid-area: beskrivelse;
+    margin-left: 3vw;
+    line-height: 1.5;
+}
+
+.data-materialer {
+    grid-area: materialer;
+    margin-left: 3vw;
+    margin-bottom: 10vw;
+    line-height: 1.5;
+}
+
+.o-1 {
+    grid-area: o-1;
+    font-size: 16px;
+    margin-left: 3vw;
+    margin-top: 10vw;
+}
+
+.o-2 {
+    grid-area: o-2;
+    font-size: 16px;
+    margin-left: 3vw;
+    margin-top: 10vw;
+}
+
+.farver {
+    grid-area: farver;
+    margin-left: 3vw;
+}
+
+.siezes {
+    grid-area: siezes;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+select {
+    border-style: none;
+    background-color: skyblue;
+    height: 35px;
+    font-size: 13px;
+
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+    grid-area: billede;
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 3vw 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+
+
+/* Media Q ipad  */
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-color: lightpink;
+    }
+
+    .data-container {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
+    .clothes {
+        background-color: lightpink;
+    }
+
+    .data-pris {
+        margin-bottom: 5vw;
+    }
+
+    .o-1 {
+        margin-top: 5vw;
+    }
+
+    .o-2 {
+        margin-top: 5vw;
+    }
+
+    .data-materialer {
+        margin-bottom: 5vw;
+    }
+}
+
+/* Media Q ipad 1024  */
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background-color: lightgoldenrodyellow;
+    }
+
+    .clothes {
+        background-color: lightgoldenrodyellow;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        line-height: 0.2;
+    }
+    .data-billede1 {
+        grid-column: 1;
+        grid-row: 1 / span 4;
+    }
+
+    .singe-billede2 {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .data-billede3 {
+        grid-column: 2;
+        grid-row: 3 / span 2;
+    }
+
+    .data-navn {
+        grid-column: 3;
+        grid-row: 1;
+
+    }
+    .data-pris {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .o-1 {
+        grid-column: 1 / span 2;
+        grid-row: 5;
+    }
+    .data-beskrivelse {
+        grid-column: 1 / span 2;
+        grid-row: 6;
+    }
+
+    .o-2 {
+        grid-column: 3 / span 2;
+        grid-row: 5;
+    }
+
+    .data-materialer {
+        grid-column: 3 / span 2;
+        grid-row: 6;
+    }
+
+    .farver {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .siezes {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .kob {
+        grid-column: 4;
+        grid-row: 3;
+    }
+
+    .dot {
+        display: none;
+    }
+
+    .prev, .next{
+        display: none;
+    }
+
+}
+
+
+/* Media Q computer  */
+
+@media only screen and (min-width: 1300px) {
+    body {
+        background-color: lightblue;
+    }
+    p {
+        font-size: 14px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 17vw;
+        margin-right: 17vw;
+    }
+
+    .clothes-article {
+        margin: 1.4vw;
+    }
+
+}
