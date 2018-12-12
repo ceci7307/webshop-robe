@@ -216,7 +216,7 @@ select {
 
 @media only screen and (min-width: 768px) {
     body {
-        background-color: lightpink;
+        background-color: ;
     }
 
     .data-container {
@@ -225,7 +225,7 @@ select {
     }
 
     .clothes {
-        background-color: lightpink;
+        background-color: ;
     }
 
     .data-pris {
@@ -249,16 +249,17 @@ select {
 
 @media only screen and (min-width: 1024px) {
     body {
-        background-color: lightgoldenrodyellow;
+        background-color:;
     }
 
     .clothes {
-        background-color: lightgoldenrodyellow;
+        background-color: ;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 2fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 23px 1fr;
         line-height: 0.2;
     }
+
 /*
     .data-billede1 {
         grid-column: 1;
@@ -276,14 +277,19 @@ select {
     }
 */
 
+
     .data-navn {
         grid-column: 3;
         grid-row: 1;
+        line-height: 1;
+        margin: auto;
 
     }
     .data-pris {
         grid-column: 4;
         grid-row: 1;
+        line-height: 1;
+        margin: auto;
     }
 
     .o-1 {
@@ -317,28 +323,26 @@ select {
     .siezes {
         grid-column: 4;
         grid-row: 2;
+
     }
 
     .kob {
         grid-column: 4;
         grid-row: 3;
-        margin: auto;
+        max-width: 20vw;
     }
 
     .slideshow-container {
         grid-column: 1 / span 2;
         grid-row: 1 / span 4;
-        width: auto;
     }
-
-}
 
 
 /* Media Q computer  */
 
 @media only screen and (min-width: 1300px) {
     body {
-        background-color: lightblue;
+        background-color: ;
     }
     p {
         font-size: 14px;
