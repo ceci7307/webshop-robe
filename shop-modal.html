@@ -22,16 +22,16 @@
 
             <div class="modal-billeder">
 
-            <img class="modal-billede1" src="" alt="">
-            <img class="modal-billede2" src="" alt="">
-            <img class="modal-billede3" src="" alt="">
+                <img class="modal-billede1" src="" alt="">
+                <img class="modal-billede2" src="" alt="">
+                <img class="modal-billede3" src="" alt="">
             </div>
 
             <div class="modal-grid2">
-            <h1 class="modal-navn"></h1>
-            <h2 class="modal-pris"></h2>
+                <h1 class="modal-navn"></h1>
+                <h2 class="modal-pris"></h2>
 
-            <select class="farver">
+                <select class="farver">
                 <option value="#">Vælg farve</option>
                 <option value="sort">Sort</option>
                 <option value="hvid">Hvid</option>
@@ -40,7 +40,7 @@
                 <option value="green">Grøn</option>
                 </select>
 
-            <select class="siezes">
+                <select class="siezes">
                 <option value="#">Vælg størrelse</option>
                 <option value="xs">XS</option>
                 <option value="s">S</option>
@@ -49,8 +49,8 @@
                 <option value="xl">XL</option>
                 </select>
 
-            <button class="modal-kob"><p>Køb</p></button>
-            <button class="modal-read"><p>Læs mere</p></button>
+                <button class="modal-kob"><p>Køb</p></button>
+                <button class="modal-read"><p>Læs mere</p></button>
             </div>
         </div>
     </section>
@@ -105,9 +105,12 @@
                     window.location.href = "shop-single-1.html?id=" + clothing.id;
                 });
 
-                    klon.querySelector(".quickview").addEventListener("click", () => {
-                        visModal(clothing);
-                    });
+                klon.querySelector(".kob").addEventListener("click", () => {
+                    window.location.href = "shop-single-1.html?id=" + clothing.id;
+                });
+                klon.querySelector(".quickview").addEventListener("click", () => {
+                    visModal(clothing);
+                });
 
                 clothesContainer.appendChild(klon);
 
@@ -133,7 +136,6 @@
         function skjulModal() {
             modal.classList.remove("vis");
         }
-
     </script>
 
 

@@ -14,6 +14,47 @@
 
 <body>
 
+    <section id="modal">
+
+        <button class="luk">Luk</button>
+        <div id="modal-content">
+
+            <div class="modal-billeder">
+
+                <img class="modal-billede1" src="" alt="">
+                <img class="modal-billede2" src="" alt="">
+                <img class="modal-billede3" src="" alt="">
+            </div>
+
+            <div class="modal-grid2">
+                <h1 class="modal-navn"></h1>
+                <h2 class="modal-pris"></h2>
+
+                <select class="farver">
+                <option value="#">Vælg farve</option>
+                <option value="sort">Sort</option>
+                <option value="hvid">Hvid</option>
+                <option value="blue">Blå</option>
+                <option value="grey">Grå</option>
+                <option value="green">Grøn</option>
+                </select>
+
+                <select class="siezes">
+                <option value="#">Vælg størrelse</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+                </select>
+
+                <button class="modal-kob"><p>Køb</p></button>
+                <button class="modal-read"><p>Læs mere</p></button>
+            </div>
+        </div>
+    </section>
+
+
     <main class="forside-container">
         <article class="forside-pic-view">
             <img class="forside-pic" src="" alt="">
@@ -121,6 +162,11 @@
                     window.location.href = "shop-single-1.html?id=" + clothing.id;
                 });
 
+                klon.querySelector(".kob").addEventListener("click", () => {
+                    window.location.href = "shop-single-1.html?id=" + clothing.id;
+                });
+
+
                 klon.querySelector(".quickview").addEventListener("click", () => {
                     visModal(clothing);
                 });
@@ -128,6 +174,25 @@
                 clothesContainer.appendChild(klon);
 
             });
+        }
+
+        // SCRIPT MODAL
+        function visModal(item) {
+            let modal = document.querySelector("#modal");
+            modal.classList.add("vis");
+
+            modal.querySelector(".modal-navn").textContent = item.title.rendered;
+            modal.querySelector(".modal-pris").textContent = item.acf.pris;
+
+            modal.querySelector(".modal-billede1").src = item.acf.hovedbillede;
+            modal.querySelector(".modal-billede2").src = item.acf.billede_2;
+            modal.querySelector(".modal-billede3").src = item.acf.billede_3;
+
+            modal.querySelector(".luk").addEventListener("click", skjulModal);
+        }
+
+        function skjulModal() {
+            modal.classList.remove("vis");
         }
 
 

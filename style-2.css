@@ -17,6 +17,7 @@ p {
 
 p {
     font-size: 12px;
+    line-height: 2;
 }
 
 /* FORSIDE */
@@ -38,8 +39,9 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.clothes-article1{
-        background-color: white;
+
+.clothes-article1 {
+    background-color: white;
     display: grid;
     grid-template-areas: "billede billede" "navn navn" "liner liner" "pris pris" "kob quickview";
     line-height: 0.0;
@@ -70,20 +72,21 @@ iframe {
     grid-column: 2;
     grid-row: 1;
     text-align: center;
+    margin-top: 0;
 }
 
 .data-teaser {
     grid-column: 2;
     grid-row: 2;
-    margin-left: 2vw;
-    text-align: center;
+    margin-left: 2.5vw;
 }
 
 .read-kronik {
     color: black;
     grid-column: 2;
     grid-row: 4;
-    text-align: center;
+    margin-left: 2.5vw;
+    margin-bottom: 0;
 }
 
 
@@ -122,8 +125,10 @@ iframe {
 
 .data-navn {
     grid-area: navn;
+    margin-bottom: 0;
+    font-size: 15px;
     margin-left: 3vw;
-    line-height: 1;
+    line-height: 0.5;
 }
 
 .data-liner {
@@ -135,8 +140,10 @@ iframe {
 .data-pris {
     grid-area: pris;
     margin-left: 3vw;
-    margin-bottom: 8vw;
+    margin-bottom: 3vw;
+    margin-top: 0;
     color: skyblue;
+    line-height: 1;
 }
 
 .kob {
@@ -288,8 +295,8 @@ select {
         background-color: lightpink;
     }
 
-    .forside-pic-view{
-                        margin-left: 8vw;
+    .forside-pic-view {
+        margin-left: 8vw;
         margin-right: 8vw;
     }
 
@@ -306,15 +313,15 @@ select {
     }
 
     .blog-billede {
-    max-width: 200px;
-}
+        width: 100%
+    }
     .blog-contatiner {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 1 1fr 1fr 1fr;
-                margin-left: 8vw;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: 1 1fr 1fr 1fr;
+        margin-left: 8vw;
         margin-right: 8vw;
-}
+    }
 
 
     .container {
@@ -327,7 +334,7 @@ select {
     .clothes-article {
         margin: 2vw;
     }
-        .clothes-article1 {
+    .clothes-article1 {
         margin: 2vw;
     }
     .modal-billeder {
@@ -366,6 +373,10 @@ select {
         max-height: 315px;
     }
 
+    .data-pris {
+        margin-bottom: 1vw;
+    }
+
 }
 
 
@@ -379,7 +390,7 @@ select {
         font-size: 14px;
     }
 
-        .forside-pic-view{
+    .forside-pic-view {
         margin-left: 15vw;
         margin-right: 15vw;
     }
@@ -392,8 +403,8 @@ select {
     .forslag {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        margin-left: 17vw;
-        margin-right: 17vw;
+        margin-left: 14vw;
+        margin-right: 14vw;
     }
 
     .container {
@@ -402,22 +413,18 @@ select {
         margin-left: 17vw;
         margin-right: 17vw;
     }
-
-        .blog-billede {
-    max-width: 300px;
-}
     .blog-contatiner {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 1 1fr 1fr 1fr;
-        margin-left: 19vw;
-        margin-right: 19vw;
-}
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: 1 1fr 1fr 1fr;
+        margin-left: 14vw;
+        margin-right: 14vw;
+    }
 
     .clothes-article {
         margin: 1.4vw;
     }
-        .clothes-article1 {
+    .clothes-article1 {
         margin: 1.4vw;
     }
 
@@ -433,6 +440,10 @@ select {
     .modal-pris {
         margin-top: 2vw;
         margin-bottom: 4vw;
+    }
+
+    .data-pris {
+        margin-bottom: 1;
     }
 
 }
