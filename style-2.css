@@ -19,8 +19,76 @@ p {
     font-size: 12px;
 }
 
+/* FORSIDE */
 
-/* clothes */
+.forslag-txt {
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.forside-container {
+    margin: 5vw;
+}
+
+.forside-pic {
+    width: 100%;
+}
+
+.forslag {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.clothes-article1{
+        background-color: white;
+    display: grid;
+    grid-template-areas: "billede billede" "navn navn" "liner liner" "pris pris" "kob quickview";
+    line-height: 0.0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 0.5vw;
+}
+
+iframe {
+    width: 100%;
+}
+
+.blog-contatiner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1 1fr 1fr 1fr;
+}
+
+.blog-contatiner img {
+    width: 100%;
+}
+
+.blog-billede {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+}
+
+.data-blog {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+}
+
+.data-teaser {
+    grid-column: 2;
+    grid-row: 2;
+    margin-left: 2vw;
+    text-align: center;
+}
+
+.read-kronik {
+    color: black;
+    grid-column: 2;
+    grid-row: 4;
+    text-align: center;
+}
+
+
+
+/* CLOTHES */
 
 .container {
     margin: 3vw;
@@ -55,11 +123,13 @@ p {
 .data-navn {
     grid-area: navn;
     margin-left: 3vw;
+    line-height: 1;
 }
 
 .data-liner {
     grid-area: liner;
     margin-left: 3vw;
+    line-height: 1;
 }
 
 .data-pris {
@@ -141,6 +211,7 @@ p {
     background-color: skyblue;
     border: 1px solid whitesmoke;
 }
+
 .modal-read {
     grid-area: read;
     cursor: pointer;
@@ -217,6 +288,34 @@ select {
         background-color: lightpink;
     }
 
+    .forside-pic-view{
+                        margin-left: 8vw;
+        margin-right: 8vw;
+    }
+
+    .forslag {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+    .forslag-txt {
+        text-align: center;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    .blog-billede {
+    max-width: 200px;
+}
+    .blog-contatiner {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1 1fr 1fr 1fr;
+                margin-left: 8vw;
+        margin-right: 8vw;
+}
+
 
     .container {
         display: grid;
@@ -226,6 +325,9 @@ select {
     }
 
     .clothes-article {
+        margin: 2vw;
+    }
+        .clothes-article1 {
         margin: 2vw;
     }
     .modal-billeder {
@@ -254,6 +356,16 @@ select {
 
     }
 
+    .youVideo {
+        text-align: center;
+    }
+
+    iframe {
+        justify-content: center;
+        max-width: 560px;
+        max-height: 315px;
+    }
+
 }
 
 
@@ -267,6 +379,23 @@ select {
         font-size: 14px;
     }
 
+        .forside-pic-view{
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
+    .forslag-txt {
+        margin-left: 17vw;
+        margin-right: 17vw;
+    }
+
+    .forslag {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 17vw;
+        margin-right: 17vw;
+    }
+
     .container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -274,7 +403,21 @@ select {
         margin-right: 17vw;
     }
 
+        .blog-billede {
+    max-width: 300px;
+}
+    .blog-contatiner {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1 1fr 1fr 1fr;
+        margin-left: 19vw;
+        margin-right: 19vw;
+}
+
     .clothes-article {
+        margin: 1.4vw;
+    }
+        .clothes-article1 {
         margin: 1.4vw;
     }
 

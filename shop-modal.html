@@ -84,7 +84,7 @@
         let clothesContainer = document.querySelector(".container");
         // Hent json
         async function getJSON() {
-            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe-cph/wp-json/wp/v2/clothing");
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe-cph/wp-json/wp/v2/clothing" + "?per_page=100");
             clothes = await jsonData.json();
             console.log(clothes);
             visClothing();
