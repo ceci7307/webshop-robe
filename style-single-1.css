@@ -60,6 +60,9 @@ p {
     grid-area: pris;
     margin-bottom: 8vw;
     color: skyblue;
+    justify-self: right;
+    padding: 0 4vw;
+
 }
 
 .kob {

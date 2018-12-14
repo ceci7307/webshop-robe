@@ -116,7 +116,6 @@ iframe {
     grid-area: billede;
     width: 100%;
     opacity: 0;
-    cursor: pointer;
 }
 
 .data-billede2:hover {
@@ -282,6 +281,13 @@ select {
 .modal-billede3 {
     width: 100%;
     max-width: 200px;
+}
+
+.luk {
+    float: right;
+    border: 1px solid;
+    height: 20px;
+    cursor: pointer;
 }
 
 
