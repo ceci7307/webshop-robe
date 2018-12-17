@@ -41,6 +41,29 @@
         </ul>
     </header>
 
+    <!--NEWSLETTER-->
+
+    <button class="open-button" onclick="openForm()">Tilmeld nyhedsbrev</button>
+
+<div class="form-popup" id="newsletter">
+  <form action="#" class="form-container">
+    <h1>Robe nyhedsbrev</h1>
+
+    <label for="navn"><b>Navn</b></label>
+    <input type="text" placeholder="Dit navn..." name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Din email..." name="email" required>
+
+    <button type="submit" class="knap">Tilmeld</button>
+    <button type="button" class="knap cancel" onclick="closeForm()">Luk</button>
+  </form>
+</div>
+
+
+    <!--INDHOLD-->
+
+
     <main class="container-single">
 
         <section class="data-container">
@@ -103,6 +126,37 @@
     </main>
 
 
+    <footer>
+
+   <div class="foot-wrap">
+   <div class="foot-txt">
+    <h2>KONTAKT</h2>
+    <div class="linje-footer1"></div>
+<a href="mailto:info@robe-cph.com">   <p>info@robe-cph.com</p></a>
+      <p>+45 25 60 11 59</p>
+       </div>
+       <div class="foot-txt">
+        <h2> BUTIK</h2>
+        <div class="linje-footer2"></div>
+    <p>Samallegade 36, 2000 Frederiksberg</p>
+      <p>Mandag, onsdag & fredag fra 11:00-18:00</p>
+       </div>
+       <div class="foot-txt">
+        <h2>SHOWROOM</h2>
+        <div class="linje-footer3"></div>
+    <p>Samallegade 36, 2000 Frederiksberg</p>
+    <a href="mailto:info@robe-cph.com"> <p>Kontakt for fremvisning</p></a>
+    <a href="https://www.facebook.com/robecph/">  <img src="facebook.png" alt="Robe Facebook"></a>
+    <a href="https://www.instagram.com/robecph/"> <img src="insta.png" alt="Robe Instagram"></a>
+       </div>
+
+    </div>
+     <div class="foot-pic">
+     <img src="foot-kopi-copy.png" alt="Frederiksberg">
+    </div>
+</footer>
+
+
     <!--Script-->
     <script>
 
@@ -115,6 +169,17 @@
                 x.className = "nav";
             }
         }
+
+         // Newsletter
+
+        function openForm() {
+  document.getElementById("newsletter").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("newsletter").style.display = "none";
+}
+
 
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");
