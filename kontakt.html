@@ -4,21 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Læs de seneste blogindlæg fra Robe Copenhagen</title>
-    <!-- Meta beskrivelse  -->
+    <title>Kontakt en medarnejder fra Robe Copenhagen</title>
     <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
-    <!-- CSS  -->
-    <link rel="stylesheet" href="kronik.css" type="text/css">
+    <!-- Font  -->
+    <link rel="stylesheet" href="style-2.css" type="text/css">
+    <!-- Icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font  -->
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
-        <!-- Icon  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
-
- <header>
+      <header>
 
         <div class="header-container">
             <div class="logo-container">
@@ -33,11 +31,11 @@
 
            <ul class="nav" id="topnav">
 
-            <li><a href="index.html" class="active">Forside</a></li>
+            <li><a href="index.html">Forside</a></li>
             <li><a href="shop.html">Shop</a></li>
             <li><a href="forhandlere.html">Forhandlere</a></li>
             <li><a href="#">Om Robe</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.html" class="active">Kontakt</a></li>
         </ul>
     </header>
 
@@ -64,16 +62,25 @@
     <!--INDHOLD-->
 
 
-   <div class="kronik-container"></div>
-       <template class="kronik">
-<!--           <h2 class="data-blog"></h2>-->
-            <p class="data-txt"></p>
-            <img class="blog-billede" src="" alt="">
-        </template>
+    <div class="contact-container"></div>
+    <template id="contact-template">
+      <article class="contact-article">
+    <div class="div2">
+            <div class="section-billede">
+        <img class="data-medarbejder" src="" alt="">
+        </div>
+      <div class="section-txt">
+       <h1 class="data-navn"></h1>
+       <div class="linje-kontakt"></div>
+    <a href="mailto:karina@robe.dk"><p class="data-mail"></p></a>
+          <p class="data-mobil"></p>
+    </div>
+      </div>
+       </article>
+    </template>
 
 
-
-        <footer>
+<footer>
 
    <div class="foot-wrap">
    <div class="foot-txt">
@@ -104,9 +111,8 @@
 </footer>
 
 
-   <script>
-
-       // Responsiv nav
+    <script>
+        // Responsiv nav
         function navFunktion() {
             var x = document.getElementById("topnav");
             if (x.className === "nav") {
@@ -115,42 +121,37 @@
                 x.className = "nav";
             }
         }
-
         // Newsletter
-
         function openForm() {
   document.getElementById("newsletter").style.display = "block";
 }
-
 function closeForm() {
   document.getElementById("newsletter").style.display = "none";
 }
-
-
-    document.addEventListener("DOMContentLoaded", getJSON);
-        let kronikTemplate = document.querySelector(".kronik");
-        let kronikContainer = document.querySelector(".kronik-container");
-
+        // DOM
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let contactTemplate = document.querySelector("#contact-template");
+        let contactContainer = document.querySelector(".contact-container");
+        // Hent json
         async function getJSON() {
-            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe-cph/wp-json/wp/v2/blog_posts" + "?per_page=1");
-            kronik = await jsonData.json();
-            console.log(kronik);
-            visKronik();
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe/wp-json/wp/v2/contact");
+            contacts = await jsonData.json();
+            console.log(contacts);
+            visContacts();
         }
-
-        function visKronik() {
-            kronik.forEach(kronikken => {
-                let klon = kronikTemplate.cloneNode(true).content;
-
-//                klon.querySelector(".data-blog").textContent = kronikken.title.rendered;
-                klon.querySelector(".data-txt").innerHTML = kronikken.content.rendered;
-                klon.querySelector(".blog-billede").src = kronikken.acf.billede;
-
-                kronikContainer.appendChild(klon);
-
+        // Viser og kloner
+        function visContacts() {
+            contacts.forEach(contact => {
+                let klon = contactTemplate.cloneNode(true).content;
+                klon.querySelector(".data-navn").textContent = contact.acf.navn;
+                klon.querySelector(".data-mail").textContent = contact.acf.mail;
+                klon.querySelector(".data-mobil").textContent = contact.acf.tlf;
+                klon.querySelector(".data-medarbejder").src = contact.acf.billede;
+                contactContainer.appendChild(klon);
             });
         }
-
     </script>
-    </body>
+
+</body>
+
 </html>

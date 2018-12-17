@@ -1,3 +1,9 @@
+body {
+    font-family: 'Assistant', sans-serif;
+    margin: 0;
+    background-color: whitesmoke;
+}
+
 img {
     width: 100%;
 }
@@ -22,6 +28,7 @@ p {
     margin: 0;
     padding: 0;
     text-align: center;
+    margin-top: 2vw;
 }
 
 .nav li {
@@ -43,7 +50,7 @@ p {
 
 .nav a.active {
     border-bottom: 2px solid #628297;
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .logo .nav a:hover {
@@ -119,7 +126,7 @@ p {
 }
 .form-container input[type=text], .form-container input[type=password] {
   width: 100%;
-  padding: 15px;
+  padding: 15px 0px 15px 5px;
   margin: 5px 0 22px 0;
   border: none;
   background: #dfdfdf;
@@ -147,6 +154,7 @@ p {
 .kronik-container {
     display: grid;
     grid-template-areas: "billede billede" "txt txt";
+    margin: 2vw;
 }
 
 .data-txt {
@@ -232,9 +240,6 @@ footer {
 /* Media Q ipad  */
 
 @media only screen and (min-width: 768px) {
-    body {
-        background-color: lightpink;
-    }
 
     .kronik-container {
         display: grid;
@@ -315,9 +320,6 @@ footer {
 /* Media Q computer  */
 
 @media only screen and (min-width: 1300px) {
-    body {
-        background-color: lightblue;
-    }
 
     .data-txt {
         margin-left: 5vw;

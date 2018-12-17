@@ -4,21 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Læs de seneste blogindlæg fra Robe Copenhagen</title>
-    <!-- Meta beskrivelse  -->
+    <title>Find forhandlere af Robe Copenhagen</title>
     <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
     <!-- CSS  -->
-    <link rel="stylesheet" href="kronik.css" type="text/css">
-    <!-- Font  -->
-    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
-        <!-- Icon  -->
+    <link rel="stylesheet" href="style-2.css" type="text/css">
+     <!-- Icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+
 
 </head>
 
 <body>
 
- <header>
+      <header>
 
         <div class="header-container">
             <div class="logo-container">
@@ -33,15 +33,15 @@
 
            <ul class="nav" id="topnav">
 
-            <li><a href="index.html" class="active">Forside</a></li>
+            <li><a href="index.html">Forside</a></li>
             <li><a href="shop.html">Shop</a></li>
-            <li><a href="forhandlere.html">Forhandlere</a></li>
+            <li><a href="forhandlere.html" class="active">Forhandlere</a></li>
             <li><a href="#">Om Robe</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </header>
 
-    <!--NEWSLETTER-->
+<!--NEWSLETTER-->
 
     <button class="open-button" onclick="openForm()">Tilmeld nyhedsbrev</button>
 
@@ -64,16 +64,16 @@
     <!--INDHOLD-->
 
 
-   <div class="kronik-container"></div>
-       <template class="kronik">
-<!--           <h2 class="data-blog"></h2>-->
-            <p class="data-txt"></p>
-            <img class="blog-billede" src="" alt="">
-        </template>
+<div class="f-container"></div>
+<template class="f-template">
+    <article class="f-article">
+    <h1 class="f-navn"></h1>
+    <div class="f-txt"></div>
+    </article>
+</template>
 
 
-
-        <footer>
+<footer>
 
    <div class="foot-wrap">
    <div class="foot-txt">
@@ -103,54 +103,36 @@
     </div>
 </footer>
 
-
-   <script>
-
-       // Responsiv nav
-        function navFunktion() {
-            var x = document.getElementById("topnav");
-            if (x.className === "nav") {
-                x.className += " responsive";
-            } else {
-                x.className = "nav";
-            }
-        }
-
-        // Newsletter
-
+<script>
+    // Newsletter
         function openForm() {
   document.getElementById("newsletter").style.display = "block";
 }
-
 function closeForm() {
   document.getElementById("newsletter").style.display = "none";
 }
-
-
-    document.addEventListener("DOMContentLoaded", getJSON);
-        let kronikTemplate = document.querySelector(".kronik");
-        let kronikContainer = document.querySelector(".kronik-container");
-
+    // DOM
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let fTemplate = document.querySelector(".f-template");
+        let fContainer = document.querySelector(".f-container");
+        // Hent json
         async function getJSON() {
-            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe-cph/wp-json/wp/v2/blog_posts" + "?per_page=1");
-            kronik = await jsonData.json();
-            console.log(kronik);
-            visKronik();
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe/wp-json/wp/v2/forhandlere");
+            f = await jsonData.json();
+            console.log(f);
+            visPage();
         }
-
-        function visKronik() {
-            kronik.forEach(kronikken => {
-                let klon = kronikTemplate.cloneNode(true).content;
-
-//                klon.querySelector(".data-blog").textContent = kronikken.title.rendered;
-                klon.querySelector(".data-txt").innerHTML = kronikken.content.rendered;
-                klon.querySelector(".blog-billede").src = kronikken.acf.billede;
-
-                kronikContainer.appendChild(klon);
-
+        // Viser og kloner
+        function visPage() {
+            f.forEach(f1 => {
+                let klon = fTemplate.cloneNode(true).content;
+                klon.querySelector(".f-navn").textContent = f1.title.rendered;
+                klon.querySelector(".f-txt").innerHTML = f1.content.rendered;
+                fContainer.appendChild(klon);
             });
         }
+</script>
 
-    </script>
-    </body>
+
+</body>
 </html>
