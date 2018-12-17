@@ -1,9 +1,18 @@
-img{
+img {
     width: 100%;
 }
 
-body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Assistant', sans-serif;
+}
+
+p {
+    font-family: Helvetica, sans-serif;
 }
 
 /*Navigation*/
@@ -19,8 +28,8 @@ body {
     display: inline;
 }
 
-.nav a{
-    display: none ;
+.nav a {
+    display: none;
     padding: 10px;
     text-decoration: none;
     color: black;
@@ -41,19 +50,22 @@ body {
     border-bottom: none;
 }
 
-.logo-container img{
+.logo-container img {
     width: 100%;
     max-width: 13vw;
     margin-top: 2vw;
-    margin-left: 5vw;
+    float: right;
 }
-.header-container{
+
+.header-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.icon-container{
+
+.icon-container {
     margin-right: 5vw;
 }
+
 .icon {
     float: right;
     display: block;
@@ -80,17 +92,17 @@ body {
 
 
 
-.kronik-container{
+.kronik-container {
     display: grid;
     grid-template-areas: "billede billede" "txt txt";
 }
 
-.data-txt{
+.data-txt {
     grid-area: txt;
 }
 
 
-.blog-billede{
+.blog-billede {
     grid-area: billede;
     max-width: 250px;
     margin: auto;
@@ -104,27 +116,27 @@ body {
         background-color: lightpink;
     }
 
-    .kronik-container{
-    display: grid;
-    grid-template-areas: "billede txt";
-}
+    .kronik-container {
+        display: grid;
+        grid-template-areas: "billede txt";
+    }
 
 
-    .data-txt{
-    margin-left: 5vw;
-    margin-right: 5vw;
-    line-height: 1.5;
-}
+    .data-txt {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        line-height: 1.5;
+    }
 
 
-.blog-billede{
+    .blog-billede {
 
-    max-width: 250px;
-    margin-left: 5vw;
-}
+        max-width: 250px;
+        margin-left: 5vw;
+    }
 
 
-        .icon {
+    .icon {
         display: none;
     }
 
@@ -132,17 +144,17 @@ body {
         display: inline-block;
     }
 
-    .header-container{
-    display: grid;
-    grid-template-columns: 1fr;
-}
+    .header-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 
-.logo-container {
-    margin: auto;
-    padding-top: 1vw;
-}
+    .logo-container {
+        margin: auto;
+        padding-top: 1vw;
+    }
 
-    .logo-container img{
+    .logo-container img {
         max-width: 80px;
     }
 
@@ -155,28 +167,28 @@ body {
         background-color: lightblue;
     }
 
-        .data-txt{
-    margin-left: 5vw;
-    margin-right: 13vw;
-    line-height: 1.5;
-}
+    .data-txt {
+        margin-left: 5vw;
+        margin-right: 13vw;
+        line-height: 1.5;
+    }
 
 
-.blog-billede{
+    .blog-billede {
 
-    max-width: 300px;
-    margin-left: 13vw;
-}
+        max-width: 300px;
+        margin-left: 13vw;
+    }
 
     .nav {
         margin-bottom: 2vw;
     }
 
-        .nav a {
+    .nav a {
         font-size: 16px;
         padding: 0vw 1.5vw;
     }
-            .logo-container img{
+    .logo-container img {
         max-width: 90px;
     }
 
