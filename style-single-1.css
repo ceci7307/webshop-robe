@@ -12,7 +12,7 @@ h4,
 h5,
 h6,
 p {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
 }
 
 h1,
@@ -27,6 +27,79 @@ h3 {
 p {
     font-size: 12px;
 }
+
+
+/*Navigation*/
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a{
+    display: none ;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Assistant', sans-serif;
+    font-size: 14.5px;
+}
+
+.nav a:hover {
+    border-bottom: 2px solid #628297;
+}
+
+.nav a.active {
+    border-bottom: 2px solid #628297;
+    background-color: white;
+}
+
+.logo .nav a:hover {
+    border-bottom: none;
+}
+
+.logo-container img{
+    width: 100%;
+    max-width: 13vw;
+    margin-top: 2vw;
+    margin-left: 5vw;
+}
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.icon-container{
+    margin-right: 5vw;
+}
+.icon {
+    float: right;
+    display: block;
+    font-size: 20px;
+    color: black;
+}
+
+.nav.responsive {
+    position: relative;
+}
+
+.nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+
 
 
 /* clothes */
@@ -59,7 +132,7 @@ p {
 .data-pris {
     grid-area: pris;
     margin-bottom: 8vw;
-    color: skyblue;
+    color: #628297;
     justify-self: right;
     padding: 0 4vw;
 
@@ -68,14 +141,14 @@ p {
 .kob {
     grid-area: kob;
     cursor: pointer;
-    border: 1px solid skyblue;
+    border: 1px solid #628297;
     min-width: 25vw;
     margin: auto;
     margin-bottom: 2vw;
 }
 
 .kob:hover {
-    background-color: skyblue;
+    background-color: #628297;
     border: 1px solid whitesmoke;
 }
 
@@ -99,11 +172,25 @@ p {
     margin-top: 10vw;
 }
 
+.linje1 {
+    grid-area: o-1;
+    border-bottom: 1.5px solid #628297;
+    max-width: 50px;
+    margin-left: 30px;
+}
+
 .o-2 {
     grid-area: o-2;
     font-size: 16px;
     margin-left: 3vw;
     margin-top: 10vw;
+}
+
+.linje2 {
+    grid-area: o-2;
+    border-bottom: 1.5px solid #628297;
+    max-width: 50px;
+    margin-left: 30px;
 }
 
 .farver {
@@ -119,7 +206,7 @@ p {
 
 select {
     border-style: none;
-    background-color: skyblue;
+    background-color: #628297;
     height: 35px;
     font-size: 13px;
 
@@ -213,8 +300,6 @@ select {
 }
 
 
-
-
 /* Media Q ipad  */
 
 @media only screen and (min-width: 768px) {
@@ -239,12 +324,50 @@ select {
         margin-top: 5vw;
     }
 
+    .linje1 {
+        border-bottom: 1.5px solid #628297;
+        max-width: 50px;
+        margin-left: 40px;
+    }
+
     .o-2 {
         margin-top: 5vw;
     }
 
+    .linje2 {
+        border-bottom: 1.5px solid #628297;
+        max-width: 50px;
+        margin-left: 40px;
+    }
     .data-materialer {
         margin-bottom: 5vw;
+    }
+
+
+        .icon {
+        display: none;
+    }
+
+    .nav a {
+        display: inline-block;
+    }
+
+    .header-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.logo-container {
+    margin: auto;
+    padding-top: 1vw;
+}
+
+    .logo-container img{
+        max-width: 80px;
+    }
+
+    .nav{
+        margin-bottom: 2vw;
     }
 }
 
@@ -252,7 +375,7 @@ select {
 
 @media only screen and (min-width: 1024px) {
     body {
-        background-color:;
+        background-color: ;
     }
 
     .clothes {
@@ -263,7 +386,7 @@ select {
         line-height: 0.2;
     }
 
-/*
+    /*
     .data-billede1 {
         grid-column: 1;
         grid-row: 1 / span 4;
@@ -279,8 +402,6 @@ select {
         grid-row: 3 / span 2;
     }
 */
-
-
     .data-navn {
         grid-column: 3;
         grid-row: 1;
@@ -300,6 +421,16 @@ select {
         grid-row: 5;
         margin-top: 0;
     }
+    .linje1 {
+        grid-column: 1 / span 2;
+        grid-row: 5;
+        border-bottom: 1.5px solid #628297;
+        max-width: 50px;
+        margin-left: 47px;
+        margin-bottom: 1vw;
+        margin-top: 1.2vw;
+    }
+
     .data-beskrivelse {
         grid-column: 1 / span 2;
         grid-row: 6;
@@ -310,6 +441,16 @@ select {
         grid-column: 3 / span 2;
         grid-row: 5;
         margin-top: 0;
+    }
+
+    .linje2 {
+        grid-column: 3 / span 2;
+        grid-row: 5;
+        border-bottom: 1.5px solid #628297;
+        max-width: 50px;
+        margin-left: 44px;
+        margin-bottom: 1vw;
+        margin-top: 1.2vw;
     }
 
     .data-materialer {
@@ -341,25 +482,47 @@ select {
     }
 
 
-/* Media Q computer  */
+    /* Media Q computer  */
+    @media only screen and (min-width: 1300px) {
+        body {
+            background-color: ;
+        }
+        p {
+            font-size: 14px;
+        }
 
-@media only screen and (min-width: 1300px) {
-    body {
-        background-color: ;
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-left: 17vw;
+            margin-right: 17vw;
+        }
+
+        .clothes-article {
+            margin: 1.4vw;
+        }
+
+        .linje1 {
+
+            border-bottom: 1.5px solid #628297;
+            max-width: 50px;
+            margin-left: 57px;
+
+        }
+        .linje2 {
+
+            border-bottom: 1.5px solid #628297;
+            max-width: 50px;
+            margin-left: 54px;
+
+        }
+
+            .nav a {
+        font-size: 16px;
+        padding: 0vw 1.5vw;
     }
-    p {
-        font-size: 14px;
+                .logo-container img{
+        max-width: 90px;
     }
 
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin-left: 17vw;
-        margin-right: 17vw;
     }
-
-    .clothes-article {
-        margin: 1.4vw;
-    }
-
-}

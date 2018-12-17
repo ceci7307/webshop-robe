@@ -1,0 +1,183 @@
+img{
+    width: 100%;
+}
+
+body {
+    font-family: 'Assistant', sans-serif;
+}
+
+/*Navigation*/
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a{
+    display: none ;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Assistant', sans-serif;
+    font-size: 14.5px;
+}
+
+.nav a:hover {
+    border-bottom: 2px solid #628297;
+}
+
+.nav a.active {
+    border-bottom: 2px solid #628297;
+    background-color: white;
+}
+
+.logo .nav a:hover {
+    border-bottom: none;
+}
+
+.logo-container img{
+    width: 100%;
+    max-width: 13vw;
+    margin-top: 2vw;
+    margin-left: 5vw;
+}
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.icon-container{
+    margin-right: 5vw;
+}
+.icon {
+    float: right;
+    display: block;
+    font-size: 20px;
+    color: black;
+}
+
+.nav.responsive {
+    position: relative;
+}
+
+.nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+
+
+
+.kronik-container{
+    display: grid;
+    grid-template-areas: "billede billede" "txt txt";
+}
+
+.data-txt{
+    grid-area: txt;
+}
+
+
+.blog-billede{
+    grid-area: billede;
+    max-width: 250px;
+    margin: auto;
+}
+
+
+/* Media Q ipad  */
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-color: lightpink;
+    }
+
+    .kronik-container{
+    display: grid;
+    grid-template-areas: "billede txt";
+}
+
+
+    .data-txt{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    line-height: 1.5;
+}
+
+
+.blog-billede{
+
+    max-width: 250px;
+    margin-left: 5vw;
+}
+
+
+        .icon {
+        display: none;
+    }
+
+    .nav a {
+        display: inline-block;
+    }
+
+    .header-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.logo-container {
+    margin: auto;
+    padding-top: 1vw;
+}
+
+    .logo-container img{
+        max-width: 80px;
+    }
+
+}
+
+/* Media Q computer  */
+
+@media only screen and (min-width: 1300px) {
+    body {
+        background-color: lightblue;
+    }
+
+        .data-txt{
+    margin-left: 5vw;
+    margin-right: 13vw;
+    line-height: 1.5;
+}
+
+
+.blog-billede{
+
+    max-width: 300px;
+    margin-left: 13vw;
+}
+
+    .nav {
+        margin-bottom: 2vw;
+    }
+
+        .nav a {
+        font-size: 16px;
+        padding: 0vw 1.5vw;
+    }
+            .logo-container img{
+        max-width: 90px;
+    }
+
+}

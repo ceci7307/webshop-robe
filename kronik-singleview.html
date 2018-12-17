@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Læs de seneste blogindlæg fra Robe Copenhagen</title>
+    <!-- Meta beskrivelse  -->
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="kronik.css" type="text/css">
+    <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+        <!-- Icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <header>
+
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="forside.html">
+     <img class="logo" src="logo-sort.png" alt="Robe Logo">
+     </a></div>
+     <div class="icon-container">
+    <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
+      <i class="fa fa-bars"></i></a>
+       </div>
+        </div>
+
+           <ul class="nav" id="topnav">
+
+            <br>
+            <li><a href="forside.html">Forside</a></li>
+            <li><a href="shop-modal.html">Shop</a></li>
+            <li><a href="/Forhandlere/">Forhandlere</a></li>
+            <li><a href="/om/">Om Robe</a></li>
+            <li><a href="/kontakt/">Kontakt</a></li>
+        </ul>
+    </header>
+
+   <div class="kronik-container"></div>
+       <template class="kronik">
+<!--           <h2 class="data-blog"></h2>-->
+            <p class="data-txt"></p>
+            <img class="blog-billede" src="" alt="">
+        </template>
+
+
+   <script>
+
+       // Responsiv nav
+        function navFunktion() {
+            var x = document.getElementById("topnav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
+
+    document.addEventListener("DOMContentLoaded", getJSON);
+        let kronikTemplate = document.querySelector(".kronik");
+        let kronikContainer = document.querySelector(".kronik-container");
+
+        async function getJSON() {
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe-cph/wp-json/wp/v2/blog_posts" + "?per_page=1");
+            kronik = await jsonData.json();
+            console.log(kronik);
+            visKronik();
+        }
+
+        function visKronik() {
+            kronik.forEach(kronikken => {
+                let klon = kronikTemplate.cloneNode(true).content;
+
+//                klon.querySelector(".data-blog").textContent = kronikken.title.rendered;
+                klon.querySelector(".data-txt").innerHTML = kronikken.content.rendered;
+                klon.querySelector(".blog-billede").src = kronikken.acf.billede;
+
+                kronikContainer.appendChild(klon);
+
+            });
+        }
+
+    </script>
+    </body>
+</html>

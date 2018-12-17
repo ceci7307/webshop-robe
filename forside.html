@@ -9,11 +9,37 @@
     <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
     <!-- CSS  -->
     <link rel="stylesheet" href="style-2.css" type="text/css">
+        <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+        <!-- Icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
+      <header>
 
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="forside.html">
+     <img class="logo" src="logo-sort.png" alt="Robe Logo">
+     </a></div>
+     <div class="icon-container">
+    <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
+      <i class="fa fa-bars"></i></a>
+       </div>
+        </div>
+
+           <ul class="nav" id="topnav">
+
+            <br>
+            <li><a href="forside.html" class="active">Forside</a></li>
+            <li><a href="shop-modal.html">Shop</a></li>
+            <li><a href="/Forhandlere/">Forhandlere</a></li>
+            <li><a href="/om/">Om Robe</a></li>
+            <li><a href="/kontakt/">Kontakt</a></li>
+        </ul>
+    </header>
     <section id="modal">
 
         <button class="luk">Luk</button>
@@ -65,7 +91,8 @@
         <br>
 
         <div class="forslag-txt">
-            <h1>Mangler du inspiration til garderoben?</h1>
+            <h2>Mangler du nyt til garderoben?</h2>
+            <div class="linje2"></div>
             <p>Her er vores forslag til dig</p>
         </div>
         <div class="forslag">
@@ -91,7 +118,8 @@
         <br>
 
         <div class="forslag-txt">
-            <h1>Overskrift til Video</h1>
+            <h2>Overskrift til Video</h2>
+            <div class="linje2"></div>
             <p>Kort intro til vores fine video som vi har lavet i forbindelse med vores eksamensprojekt på 2. semester KEA. </p>
         </div>
 
@@ -109,8 +137,9 @@
         <div class="blog-contatiner"></div>
         <template class="blog">
             <h3 class="data-blog"></h3>
+            <div class="linje"></div>
             <p class="data-teaser"></p>
-            <a href="#" class="read-kronik"><p>Læs hele kronikken</p></a>
+            <a href="kronik-singleview.html" class="read-kronik"><p>Læs hele kronikken</p></a>
             <img class="blog-billede" src="" alt="">
         </template>
     </main>
@@ -118,6 +147,17 @@
 
     <!--Script-->
     <script>
+
+        // Responsiv nav
+        function navFunktion() {
+            var x = document.getElementById("topnav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
+
         // Forside billeder
         document.addEventListener("DOMContentLoaded", getJSON1);
         let forsidePic;
@@ -217,6 +257,7 @@
                 klon2.querySelector(".blog-billede").src = kronikken.acf.billede;
 
                 blogContainer.appendChild(klon2);
+
 
             });
         }

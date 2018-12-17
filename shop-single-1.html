@@ -9,10 +9,37 @@
     <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
     <!-- CSS  -->
     <link rel="stylesheet" href="style-single-1.css" type="text/css">
+        <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+        <!-- Icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
+    <header>
+
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="forside.html">
+     <img class="logo" src="logo-sort.png" alt="Robe Logo">
+     </a></div>
+     <div class="icon-container">
+    <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
+      <i class="fa fa-bars"></i></a>
+       </div>
+        </div>
+
+           <ul class="nav" id="topnav">
+
+            <br>
+            <li><a href="forside.html">Forside</a></li>
+            <li><a href="shop-modal.html" class="active">Shop</a></li>
+            <li><a href="/Forhandlere/">Forhandlere</a></li>
+            <li><a href="/om/">Om Robe</a></li>
+            <li><a href="/kontakt/">Kontakt</a></li>
+        </ul>
+    </header>
 
     <main class="container-single">
 
@@ -21,8 +48,10 @@
                 <h1 class="data-navn"></h1>
                 <h2 class="data-pris"></h2>
                 <p class="o-1">Beskrivelse:</p>
+                <div class="linje1"></div>
                 <p class="data-beskrivelse"></p>
                 <p class="o-2">Materialer:</p>
+                <div class="linje2"></div>
                 <p class="data-materialer"></p>
 
                 <select class="farver">
@@ -76,6 +105,17 @@
 
     <!--Script-->
     <script>
+
+        // Responsiv nav
+        function navFunktion() {
+            var x = document.getElementById("topnav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
+
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");
         console.log(id);
