@@ -6,14 +6,16 @@ body {
     font-family: 'Assistant', sans-serif;
 }
 
+
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Assistant', sans-serif;
+h2 {
+    font-size: 20px;
 }
+
+h3 {
+    font-size: 16px;
+}
+
 
 p {
     font-size: 12px;
@@ -103,61 +105,67 @@ img {
 /* NEWSLETTER */
 
 .open-button {
-  background-color: #dfdfdf;
-  color: black;
-  padding: 6px 2px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 13px;
-  right: 28px;
-  width:90px;
+    background-color: #dfdfdf;
+    color: black;
+    padding: 6px 2px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 13px;
+    right: 28px;
+    width: 90px;
     z-index: 1;
 }
+
 .form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #dfdfdf;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #dfdfdf;
     z-index: 2;
 }
+
 .form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
 }
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-padding: 15px 0px 15px 5px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #dfdfdf;
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    width: 100%;
+    padding: 15px 0px 15px 5px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #dfdfdf;
 }
+
 .form-container .knap {
-  background-color: #628297;
-  color: black;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+    background-color: #628297;
+    color: black;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
 }
+
 .form-container .cancel {
-  background-color: #628297;
+    background-color: #628297;
 }
-.form-container .knap:hover, .open-button:hover {
-  opacity: 1;
+
+.form-container .knap:hover,
+.open-button:hover {
+    opacity: 1;
 }
 
 
 
 
 /* FORSIDE */
-
-
 
 .forslag-txt {
     text-align: center
@@ -443,8 +451,6 @@ select {
 
 /*CONTACT*/
 
-.contact-article {}
-
 .div2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -471,7 +477,6 @@ select {
 .linje-kontakt {
     border-bottom: 0.5vw solid #628297;
     max-width: 9vw;
-    margin-top: 5vw;
     margin-left: 8vw;
 }
 
@@ -687,12 +692,12 @@ footer {
         max-width: 80px;
     }
 
-        .open-button {
-  padding: 10px 10px;
-  width:150px;
-}
+    .open-button {
+        padding: 10px 10px;
+        width: 150px;
+    }
 
-        .foot-txt img {
+    .foot-txt img {
         max-width: 23px;
         float: left;
     }
@@ -719,7 +724,7 @@ footer {
         margin-left: 5.5vw;
     }
 
-        .contact-article img {
+    .contact-article img {
         max-width: 200px;
     }
 
@@ -744,24 +749,27 @@ footer {
 
     .section-billede img {
         margin: 5vw;
+        margin-bottom: 0;
     }
-        .linje-kontakt {
+    .linje-kontakt {
         border-bottom: 0.2vw solid #628297;
         max-width: 6vw;
-        margin-left: 10vw;
-            margin-top: 3vw;
+        margin-left: 2vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
     }
 
-        .section-txt h1{
-        text-align: center;
+    .section-txt h1 {
+        margin: auto;
+        margin-top: 2vw;
     }
 
-    .section-txt p{
-        text-align: center;
-        line-height: 1;
+    .section-txt p {
+        margin: auto;
+        line-height: 2;
     }
 
-        .f-container {
+    .f-container {
         text-align: center;
     }
 
@@ -852,7 +860,7 @@ footer {
         max-width: 90px;
     }
 
-        .linje-footer1 {
+    .linje-footer1 {
 
         max-width: 3vw;
         margin-left: 0.4vw;
@@ -869,19 +877,20 @@ footer {
         margin-left: 1.4vw;
     }
 
-        .linje-kontakt {
+    .linje-kontakt {
         max-width: 3vw;
-        margin-left: 5.5vw;
-            margin-top: 2vw;
+        margin-left: 2vw;
+        margin-top: 2vw;
     }
-        .contact-container {
+    .contact-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding: 0 13vw;
     }
 
-        .f-container {
-        columns: 2;
+    .f-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         margin-left: 10vw;
         margin-right: 10vw;
     }

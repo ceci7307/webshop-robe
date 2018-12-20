@@ -17,8 +17,19 @@ h6 {
     font-family: 'Assistant', sans-serif;
 }
 
+h1,
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+
 p {
     font-family: Helvetica, sans-serif;
+    font-size: 12px;
 }
 
 /*Navigation*/
